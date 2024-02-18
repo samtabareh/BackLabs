@@ -1,0 +1,193 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0vnefe61ib4j"]
+
+[ext_resource type="Script" path="res://Objects/GoalScreen/GoalScreen.gd" id="1_q5txl"]
+[ext_resource type="Texture2D" uid="uid://4kmlj7clxu0s" path="res://Assets/Sprites/Screen/Screen.png" id="2_k2h74"]
+[ext_resource type="PackedScene" uid="uid://cxtfymvcer1y5" path="res://Objects/Slot/Slot.tscn" id="3_y3ytv"]
+[ext_resource type="Script" path="res://Objects/GoalScreen/AtomDisplay/AtomDisplay.gd" id="4_jxg2r"]
+
+[sub_resource type="Animation" id="Animation_kqh7x"]
+resource_name = "1"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Slot1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-30, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ls2kp"]
+resource_name = "2"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Slot1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-60, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Slot2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vabo1"]
+resource_name = "3"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Slot1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-80, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Slot2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-40, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Slot3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_apkms"]
+resource_name = "win"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0, 1, 0, 1, 0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_vqslm"]
+resource_name = "wrong"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 1, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdrqy"]
+_data = {
+"1": SubResource("Animation_kqh7x"),
+"2": SubResource("Animation_ls2kp"),
+"3": SubResource("Animation_vabo1"),
+"win": SubResource("Animation_apkms"),
+"wrong": SubResource("Animation_vqslm")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_iqrvm"]
+font_size = 32
+
+[node name="GoalScreen" type="Node2D"]
+z_index = -1
+script = ExtResource("1_q5txl")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_k2h74")
+hframes = 3
+frame = 1
+
+[node name="Player" type="AnimationPlayer" parent="Sprite"]
+libraries = {
+"": SubResource("AnimationLibrary_bdrqy")
+}
+
+[node name="Slot1" parent="." instance=ExtResource("3_y3ytv")]
+position = Vector2(-30, 0)
+
+[node name="Slot2" parent="." instance=ExtResource("3_y3ytv")]
+visible = false
+position = Vector2(-20, 0)
+can_pick_up = false
+
+[node name="Slot3" parent="." instance=ExtResource("3_y3ytv")]
+visible = false
+can_pick_up = false
+
+[node name="Equal" type="Label" parent="."]
+custom_minimum_size = Vector2(10, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 21.5714
+offset_top = -22.5
+offset_right = 39.5714
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "="
+label_settings = SubResource("LabelSettings_iqrvm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AtomDisplay" type="Label" parent="."]
+custom_minimum_size = Vector2(10, 0)
+offset_left = 46.5714
+offset_top = -12.0
+offset_right = 56.5714
+offset_bottom = 11.0
+script = ExtResource("4_jxg2r")
+
+[connection signal="up" from="Slot1" to="." method="_on_slot_up"]
+[connection signal="up" from="Slot2" to="." method="_on_slot_up"]
+[connection signal="up" from="Slot3" to="." method="_on_slot_up"]

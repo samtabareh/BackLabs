@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxtfymvcer1y5"]
+
+[ext_resource type="Script" path="res://Objects/Slot/Slot.gd" id="1_72gtf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayck7"]
+size = Vector2(30, 30)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sluxo"]
+font_size = 45
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Slot" type="Area2D"]
+z_index = -1
+z_as_relative = false
+script = ExtResource("1_72gtf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ayck7")
+
+[node name="Plus" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -11.5
+offset_right = 10.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+label_settings = SubResource("LabelSettings_sluxo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

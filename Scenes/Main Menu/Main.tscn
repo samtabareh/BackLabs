@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7ue81yr5jmvn"]
+
+[ext_resource type="Theme" uid="uid://b87w0gxls3wqd" path="res://Resources/MainMenuButton.tres" id="1_etxde"]
+[ext_resource type="Script" path="res://Scenes/Main Menu/Main.gd" id="1_vxl72"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_vxl72")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.235294, 0.501961, 0.52549, 0.686275)
+
+[node name="Game" type="VBoxContainer" parent="CanvasLayer" groups=["UI"]]
+layout_direction = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -114.0
+offset_right = 417.0
+offset_bottom = 82.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Start" type="Button" parent="CanvasLayer/Game"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_etxde")
+text = "Start"
+
+[node name="Tutorial" type="Button" parent="CanvasLayer/Game"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_etxde")
+text = "Tutorial"
+
+[node name="Exit" type="Button" parent="CanvasLayer/Game"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("1_etxde")
+text = "Exit
+"
+
+[node name="Language" type="VBoxContainer" parent="CanvasLayer" groups=["UI"]]
+layout_direction = 2
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -417.0
+offset_top = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="English" type="Button" parent="CanvasLayer/Language"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_etxde")
+text = "English"
+
+[node name="Farsi" type="Button" parent="CanvasLayer/Language"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("1_etxde")
+text = "Farsi
+"
+
+[connection signal="pressed" from="CanvasLayer/Game/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Game/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CanvasLayer/Game/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Language/English" to="." method="_on_en_pressed"]
+[connection signal="pressed" from="CanvasLayer/Language/Farsi" to="." method="_on_fa_pressed"]

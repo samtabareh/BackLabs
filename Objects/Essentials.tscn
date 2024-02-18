@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://vt2dw5ljby21"]
+
+[ext_resource type="PackedScene" uid="uid://bbtpb3qirf85r" path="res://Objects/HUD/HUD.tscn" id="1_q7kr8"]
+[ext_resource type="PackedScene" uid="uid://cyh64wj7erh5i" path="res://Objects/DisplayText/DisplayText.tscn" id="2_5cp6k"]
+[ext_resource type="PackedScene" uid="uid://cwtfe3dr3ec5b" path="res://Objects/Map/Map.tscn" id="3_gqxk4"]
+
+[node name="Essentials" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Hud" parent="." instance=ExtResource("1_q7kr8")]
+
+[node name="DisplayText" parent="." instance=ExtResource("2_5cp6k")]
+
+[node name="Map" parent="." instance=ExtResource("3_gqxk4")]

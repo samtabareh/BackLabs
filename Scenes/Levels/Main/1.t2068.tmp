@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://btn0f6543n84d"]
+
+[ext_resource type="PackedScene" uid="uid://bbtpb3qirf85r" path="res://Objects/HUD/HUD.tscn" id="1_dwpjl"]
+[ext_resource type="PackedScene" uid="uid://cyh64wj7erh5i" path="res://Objects/DisplayText/DisplayText.tscn" id="2_1yvnj"]
+[ext_resource type="PackedScene" uid="uid://qeti6qadlgpj" path="res://Objects/Infuser/Infuser.tscn" id="2_k1yqg"]
+[ext_resource type="PackedScene" uid="uid://b0vnefe61ib4j" path="res://Objects/GoalScreen/GoalScreen.tscn" id="2_vssfj"]
+[ext_resource type="PackedScene" uid="uid://e0fq4saymcm1" path="res://Objects/Divider/Divider.tscn" id="3_1veke"]
+[ext_resource type="PackedScene" uid="uid://b0wb4gmuey8b7" path="res://Objects/Item/Item.tscn" id="3_yqcsn"]
+[ext_resource type="PackedScene" uid="uid://0utnmhclas31" path="res://Objects/Molecule/Molecule.tscn" id="4_2w3gs"]
+[ext_resource type="PackedScene" uid="uid://cwuflur1avovq" path="res://Objects/Atom/Atom.tscn" id="5_hsisr"]
+
+[sub_resource type="Gradient" id="Gradient_qrh0q"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.182676, 0.243637, 0.282268, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lg3xt"]
+gradient = SubResource("Gradient_qrh0q")
+width = 25
+height = 44
+
+[node name="1" type="Node2D"]
+
+[node name="Hud" parent="." instance=ExtResource("1_dwpjl")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(46.28, 14.92)
+texture = SubResource("GradientTexture2D_lg3xt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="DisplayText" parent="." instance=ExtResource("2_1yvnj")]
+
+[node name="GoalScreen" parent="." instance=ExtResource("2_vssfj")]
+position = Vector2(647, 268)
+Atoms = Array[int]([0, 0, 2])
+
+[node name="Infuser" parent="." instance=ExtResource("2_k1yqg")]
+position = Vector2(461, 190)
+
+[node name="Divider" parent="." instance=ExtResource("3_1veke")]
+position = Vector2(683, 167)
+input_pickable = true
+
+[node name="Item" parent="." instance=ExtResource("3_yqcsn")]
+position = Vector2(601, 377)
+Atoms = Array[int]([0, 0, 2])
+
+[node name="Molecule" parent="." instance=ExtResource("4_2w3gs")]
+position = Vector2(660, 377)
+Atoms = Array[int]([0, 1, 2])
+
+[node name="Atom" parent="." instance=ExtResource("5_hsisr")]
+position = Vector2(729, 372)
+Atoms = Array[int]([0, 0])

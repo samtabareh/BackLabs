@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://bj372tkjhrlgd"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/Tutorial/1.gd" id="1_0cd58"]
+[ext_resource type="PackedScene" uid="uid://bbtpb3qirf85r" path="res://Objects/HUD/HUD.tscn" id="1_ot756"]
+[ext_resource type="PackedScene" uid="uid://cyh64wj7erh5i" path="res://Objects/DisplayText/DisplayText.tscn" id="2_5fpep"]
+[ext_resource type="PackedScene" uid="uid://cwtfe3dr3ec5b" path="res://Objects/Map/Map.tscn" id="3_vfk3f"]
+[ext_resource type="PackedScene" uid="uid://b0vnefe61ib4j" path="res://Objects/GoalScreen/GoalScreen.tscn" id="5_73d3c"]
+[ext_resource type="PackedScene" uid="uid://cwuflur1avovq" path="res://Objects/Item/Atom/Atom.tscn" id="5_slrhe"]
+[ext_resource type="PackedScene" uid="uid://0utnmhclas31" path="res://Objects/Item/Molecule/Molecule.tscn" id="5_xfecj"]
+[ext_resource type="PackedScene" uid="uid://cxtfymvcer1y5" path="res://Objects/Slot/Slot.tscn" id="6_1k2sq"]
+[ext_resource type="PackedScene" uid="uid://c7ue81yr5jmvn" path="res://Scenes/Main Menu/Main.tscn" id="6_byjdw"]
+[ext_resource type="PackedScene" uid="uid://qeti6qadlgpj" path="res://Objects/Station/Infuser/Infuser.tscn" id="7_uvg76"]
+[ext_resource type="PackedScene" uid="uid://e0fq4saymcm1" path="res://Objects/Station/Divider/Divider.tscn" id="9_j2mk3"]
+
+[node name="1" type="Node2D"]
+script = ExtResource("1_0cd58")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Hud" parent="." instance=ExtResource("1_ot756")]
+metadata/_edit_use_anchors_ = true
+
+[node name="DisplayText" parent="." instance=ExtResource("2_5fpep")]
+
+[node name="Map" parent="." instance=ExtResource("3_vfk3f")]
+
+[node name="GoalScreen" parent="." instance=ExtResource("5_73d3c")]
+visible = false
+position = Vector2(643, 136)
+Atoms = Array[int]([0, 0])
+Result_Scene = ExtResource("6_byjdw")
+
+[node name="Divider" parent="." instance=ExtResource("9_j2mk3")]
+visible = false
+position = Vector2(928, 253)
+
+[node name="Infuser" parent="." instance=ExtResource("7_uvg76")]
+visible = false
+position = Vector2(278, 231)
+
+[node name="Slot" parent="." instance=ExtResource("6_1k2sq")]
+visible = false
+position = Vector2(643, 262)
+
+[node name="Molecule" parent="." instance=ExtResource("5_xfecj")]
+visible = false
+position = Vector2(560, 264)
+Atoms = Array[int]([0, 0, 2])
+
+[node name="Atom" parent="." instance=ExtResource("5_slrhe")]
+visible = false
+position = Vector2(721, 264)
+Atoms = Array[int]([2])

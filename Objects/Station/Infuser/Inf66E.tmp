@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://qeti6qadlgpj"]
+
+[ext_resource type="Script" path="res://Objects/Infuser/Infuser.gd" id="1_pwtwj"]
+[ext_resource type="Shape2D" uid="uid://bg7ko03pxgrse" path="res://Objects/Infuser/Shape.tres" id="2_togwr"]
+[ext_resource type="PackedScene" uid="uid://cxtfymvcer1y5" path="res://Objects/Slot/Slot.tscn" id="3_r7vo2"]
+[ext_resource type="Texture2D" uid="uid://dp26c5021y070" path="res://Assets/Sprites/Mixer/Mixer.png" id="3_vnmlr"]
+
+[sub_resource type="Animation" id="Animation_v1u7b"]
+length = 2.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ho3ll"]
+resource_name = "default"
+length = 1.25
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8e16w"]
+_data = {
+"RESET": SubResource("Animation_v1u7b"),
+"default": SubResource("Animation_ho3ll")
+}
+
+[node name="Infuser" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_pwtwj")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = ExtResource("2_togwr")
+
+[node name="Area" type="Area2D" parent="."]
+position = Vector2(0, 12)
+metadata/_edit_group_ = true
+
+[node name="AreaShape" type="CollisionShape2D" parent="Area"]
+shape = ExtResource("2_togwr")
+
+[node name="Slots" type="Node2D" parent="."]
+
+[node name="Slot1" parent="Slots" groups=["slot"] instance=ExtResource("3_r7vo2")]
+position = Vector2(-19, -54)
+
+[node name="Slot2" parent="Slots" groups=["slot"] instance=ExtResource("3_r7vo2")]
+position = Vector2(19, -54)
+
+[node name="Slot3" parent="Slots" groups=["slot"] instance=ExtResource("3_r7vo2")]
+position = Vector2(33, -21)
+
+[node name="Slot4" parent="Slots" groups=["slot"] instance=ExtResource("3_r7vo2")]
+position = Vector2(17, 11)
+
+[node name="Slot5" parent="Slots" groups=["slot"] instance=ExtResource("3_r7vo2")]
+position = Vector2(-17, 11)
+
+[node name="Slot6" parent="Slots" groups=["slot"] instance=ExtResource("3_r7vo2")]
+position = Vector2(-32, -22)
+
+[node name="ResultSlot" parent="." instance=ExtResource("3_r7vo2")]
+visible = false
+position = Vector2(1, -21)
+is_result_slot = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_vnmlr")
+hframes = 5
+
+[node name="Player" type="AnimationPlayer" parent="Sprite"]
+libraries = {
+"": SubResource("AnimationLibrary_8e16w")
+}
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="Area" to="." method="_on_range_area_entered"]

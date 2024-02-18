@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://e0fq4saymcm1"]
+
+[ext_resource type="Script" path="res://Objects/Divider/Divider.gd" id="1_gf1cr"]
+[ext_resource type="Resource" uid="uid://k3tnivndp10m" path="res://Objects/Divider/Divider.tres" id="2_4rgxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whs8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihcdy"]
+
+[node name="Divider" type="StaticBody2D"]
+script = ExtResource("1_gf1cr")
+Info = ExtResource("2_4rgxs")
+metadata/_edit_group_ = true
+
+[node name="Shape" type="CollisionShape2D" parent="." groups=["box"]]
+visible = false
+shape = SubResource("RectangleShape2D_whs8n")
+
+[node name="Sprite" type="Sprite2D" parent="." groups=["box"]]
+scale = Vector2(217.5, 187.5)
+
+[node name="Area" type="Area2D" parent="."]
+visible = false
+
+[node name="AreaShape" type="CollisionShape2D" parent="Area" groups=["box"]]
+shape = SubResource("RectangleShape2D_ihcdy")

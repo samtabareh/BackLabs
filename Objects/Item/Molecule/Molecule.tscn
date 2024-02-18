@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://0utnmhclas31"]
+
+[ext_resource type="Script" path="res://Objects/Item/Molecule/Molecule.gd" id="1_gwuvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pk2l3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vxcje"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Molecule" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_gwuvg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pk2l3")
+
+[node name="Name" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_vxcje")
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area"]
+shape = SubResource("RectangleShape2D_pk2l3")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

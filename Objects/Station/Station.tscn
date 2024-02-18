@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc7nna51lv121"]
+
+[ext_resource type="Script" path="res://Objects/Station/Station.gd" id="1_sdhpg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wy3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4wmi"]
+
+[node name="Station" type="StaticBody2D"]
+script = ExtResource("1_sdhpg")
+metadata/_edit_group_ = true
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4wy3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="AreaShape" type="CollisionShape2D" parent="Area"]
+shape = SubResource("RectangleShape2D_p4wmi")

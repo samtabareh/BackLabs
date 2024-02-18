@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dckk0y3itx6rl"]
+
+[ext_resource type="Script" path="res://Objects/GoalScreen/AtomDisplay/AtomDisplay.gd" id="1_8op5u"]
+
+[node name="AtomDisplay" type="Label"]
+offset_right = 1.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_8op5u")
+Atoms = Array[int]([0])

@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbtpb3qirf85r"]
+
+[ext_resource type="Script" path="res://Objects/HUD/HUD.gd" id="1_3f1ed"]
+[ext_resource type="Theme" uid="uid://b87w0gxls3wqd" path="res://Resources/MainMenuButton.tres" id="2_ldu36"]
+
+[sub_resource type="Theme" id="Theme_xbi6v"]
+Button/font_sizes/font_size = 32
+
+[node name="Hud" type="Control"]
+process_mode = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3f1ed")
+
+[node name="Layer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Grey" type="ColorRect" parent="Layer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176908, 0.344457, 0.297916, 0.862745)
+
+[node name="Game" type="VBoxContainer" parent="Layer" groups=["UI"]]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -48.0
+offset_right = 200.0
+offset_bottom = 48.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Continue" type="Button" parent="Layer/Game"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ldu36")
+text = "Continue
+"
+flat = true
+
+[node name="Levels" type="Button" parent="Layer/Game"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ldu36")
+text = "Levels"
+flat = true
+
+[node name="Exit" type="Button" parent="Layer/Game"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ldu36")
+text = "Exit
+"
+flat = true
+
+[node name="Language" type="VBoxContainer" parent="Layer" groups=["UI"]]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -417.0
+offset_top = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="English" type="Button" parent="Layer/Language"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ldu36")
+text = "English"
+flat = true
+
+[node name="Farsi" type="Button" parent="Layer/Language"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_ldu36")
+text = "Farsi
+"
+flat = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Menu" type="Button" parent="CanvasLayer" groups=["UI"]]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.5
+offset_right = 80.5
+offset_bottom = 53.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_xbi6v")
+text = "Menu
+"
+
+[connection signal="pressed" from="Layer/Game/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Layer/Game/Levels" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Layer/Game/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Layer/Language/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="Layer/Language/Farsi" to="." method="_on_farsi_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu" to="." method="_on_menu_pressed"]

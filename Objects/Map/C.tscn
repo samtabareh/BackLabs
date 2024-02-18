@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cruokgweiku80"]
+
+[ext_resource type="Texture2D" uid="uid://nvwsflhxrhch" path="res://Assets/Sprites/Tiles/Column_Left.png" id="1_ix2vq"]
+[ext_resource type="Texture2D" uid="uid://m5i24fj5i5kl" path="res://Assets/Sprites/Tiles/Column_Right.png" id="2_1pccv"]
+
+[node name="Column" type="Node2D"]
+
+[node name="CL" type="Sprite2D" parent="."]
+texture = ExtResource("1_ix2vq")
+hframes = 13
+
+[node name="CR" type="Sprite2D" parent="."]
+position = Vector2(32, 0)
+texture = ExtResource("2_1pccv")
+hframes = 13

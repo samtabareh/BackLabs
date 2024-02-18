@@ -1,0 +1,75 @@
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://dvxxr37pwvnty"]
+
+[ext_resource type="Texture2D" uid="uid://dor67chynkdqv" path="res://Assets/Sprites/Tiles/Wall.png" id="1_34gce"]
+[ext_resource type="Texture2D" uid="uid://nvwsflhxrhch" path="res://Assets/Sprites/Tiles/Column_Left.png" id="2_6gf7s"]
+[ext_resource type="Texture2D" uid="uid://m5i24fj5i5kl" path="res://Assets/Sprites/Tiles/Column_Right.png" id="3_rjidu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rpcj4"]
+resource_name = "W"
+texture = ExtResource("1_34gce")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yt7ry"]
+resource_name = "LC"
+texture = ExtResource("2_6gf7s")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfvf2"]
+resource_name = "RC"
+texture = ExtResource("3_rjidu")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_arkgj"]
+resource_name = "CLC"
+texture = ExtResource("2_6gf7s")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 13
+0:0/animation_speed = 10.0
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qytw7"]
+resource_name = "CRC"
+texture = ExtResource("3_rjidu")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 13
+0:0/animation_speed = 10.0
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/4 = SubResource("TileSetAtlasSource_arkgj")
+sources/2 = SubResource("TileSetAtlasSource_yt7ry")
+sources/3 = SubResource("TileSetAtlasSource_qfvf2")
+sources/5 = SubResource("TileSetAtlasSource_qytw7")
+sources/0 = SubResource("TileSetAtlasSource_rpcj4")
