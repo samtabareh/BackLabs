@@ -18,6 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_3f1ed")
 
 [node name="Layer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Grey" type="ColorRect" parent="Layer"]
 anchors_preset = 15
