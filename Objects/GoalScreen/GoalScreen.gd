@@ -53,7 +53,7 @@ func win():
 	for node in get_parent().get_children():
 		if node is DisplayText:
 			node1 = node
-			await node1.text(["You won!"])
+			await node1.text(["Win"])
 	if Result_Scene != null: LevelHandler.change_level(Result_Scene.resource_path)
 	else: LevelHandler.change_level(LevelHandler.next_level())
 

@@ -4,6 +4,8 @@ Start;Start;شروع
 Continue;Continue;ادامه
 Exit;Exit;خروج
 Menu;Menu;منو
+Main Menu;Main Menu;منو اصلی
+Levels;Levels;مرحله ها
 English;English;انگلیسی
 Farsi;Farsi;فارسی
 Tutorial;Tutorial;آموزش
@@ -23,3 +25,4 @@ Tut13;This is the Divider, if it's not already clear enough from the name, it di
 Tut14;This is the Goal Screen. It displays what molecule you need to make to pass the level;این صفحه، مولکولی که باید بدست بیاری برای رفتن به مرحله بعد رو نشون میده
 Tut15;How do you submit your answer you ask? well you put it in the slot in the Goal Screen!;حالا چطوری مولکولی رو بعنوان جواب ثبت میکنی؟ با گذاشتنش توی جعبۀ دستگاه جواب!
 Tut16;Now, i want you to pass this level!;حالا ازت میخوام که این مرحله رو رد کنی!
+Win;You Won!;درست!

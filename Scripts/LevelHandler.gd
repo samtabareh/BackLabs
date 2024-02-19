@@ -52,12 +52,8 @@ func load_dir(dir : DirAccess):
 					
 					if Levels.get(folder_name) == null:
 						Levels[folder_name] = {}
-					var level = Level.new()
-					level.Id = int(num)
-					level.Name = file_name
-					level.Category = folder_name
-					level.Path = path+folder_name+"/"+file_name
-					Levels[folder_name][int(num)] = level
+					var level = Level.new().Level(int(num),file_name,folder_name,path+folder_name+"/"+file_name)
+					Levels[folder_name][level.Id] = level
 			else:
 				print("Found directory: " + file_name)
 				Levels[folder_name] = {}

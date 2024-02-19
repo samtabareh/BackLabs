@@ -27,6 +27,5 @@ func _on_menu_pressed():
 	$CanvasLayer/Menu.visible = false
 	get_tree().paused = true
 
-
 func _on_main_menu_pressed():
-	LevelHandler.change_level("res://Scenes/Levels.tscn")
+	LevelHandler.change_level(LevelHandler.Levels["Main Menu"])
