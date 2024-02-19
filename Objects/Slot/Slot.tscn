@@ -6,7 +6,7 @@
 size = Vector2(30, 30)
 
 [sub_resource type="LabelSettings" id="LabelSettings_sluxo"]
-font_size = 39
+font_size = 38
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
