@@ -44,8 +44,6 @@ window/stretch/aspect="expand"
 
 movie_writer/movie_file="D:/Others/Godot Projects/Prototype/Run.avi"
 movie_writer/fps=30
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
 
 [file_customization]
 

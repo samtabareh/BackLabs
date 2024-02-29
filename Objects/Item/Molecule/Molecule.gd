@@ -1,25 +1,34 @@
 class_name Molecule extends Item
 
+# Short for MoleculeT
+@export var molecule : MoleculeT
+var Atoms : Array[AtomT]
+
 func _process(delta):
-		$Name.text = Molecule.calculate_molecule_name(Atoms)
-		shape_owner_get_shape(0,0).size = $Name.size
+	if molecule:
+		Atoms = molecule.Atoms
+		$Name.text = molecule.Name
+	shape_owner_get_shape(0,0).size = $Name.size
+
+static func count_molecules(a : Array[AtomT]) -> Dictionary:
+	if a.is_empty(): pass
+	var rec = {}
+	for atom in a:
+		if rec.get(atom) != null: continue
+		rec[atom] = a.count(atom)
+	return rec
+
+static func compare_molecules(array1, array2):
+	if array1.size() != array2.size(): return false
+	for item in array1:
+		if !array2.has(item): return false
+		if array1.count(item) != array2.count(item): return false
+	return true
 
 func _input(event):
 	if event.is_action_released("click") && is_mouse_in:
 		Main.picked_up_item = self if Main.picked_up_item != self else null
-		picked_up = Main.picked_up_item == self
-
-static func calculate_molecule_name(Atoms : Array[Enums.Atoms]) -> String:
-	if not Atoms.is_empty():
-		var recurrences := {}
-		var ret := ""
-		for atom in Atoms:
-			if recurrences.get(atom) != null: continue
-			recurrences[atom] = Atoms.count(atom)
-			if recurrences[atom] > 1: ret += Enums.Atoms.keys()[atom]+str(recurrences[atom])
-			else: ret += Enums.Atoms.keys()[atom]
-		return ret
-	else: return ""
+		is_picked_up = Main.picked_up_item == self
 
 func _on_mouse_entered():
 	is_mouse_in = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://btn0f6543n84d"]
+[gd_scene load_steps=11 format=3 uid="uid://btn0f6543n84d"]
 
 [ext_resource type="PackedScene" uid="uid://bbtpb3qirf85r" path="res://Objects/HUD/HUD.tscn" id="1_dwpjl"]
 [ext_resource type="PackedScene" uid="uid://qeti6qadlgpj" path="res://Objects/Station/Infuser/Infuser.tscn" id="2_k1yqg"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c7ue81yr5jmvn" path="res://Scenes/Main Menu/Main.tscn" id="5_ed4oc"]
 [ext_resource type="PackedScene" uid="uid://cwuflur1avovq" path="res://Objects/Item/Atom/Atom.tscn" id="5_hsisr"]
 [ext_resource type="Resource" uid="uid://cxy6gm2brq88q" path="res://Resources/Molecules/H2O.tres" id="9_o10gk"]
-[ext_resource type="Resource" uid="uid://g21ojse7kxs3" path="res://Resources/Atoms/O.tres" id="11_s4el2"]
 
 [node name="1" type="Node2D"]
 
@@ -36,8 +35,7 @@ position = Vector2(225, 336)
 
 [node name="Molecule" parent="." instance=ExtResource("4_2w3gs")]
 position = Vector2(507, 271)
-molecule = ExtResource("9_o10gk")
+MT = ExtResource("9_o10gk")
 
 [node name="Atom" parent="." instance=ExtResource("5_hsisr")]
 position = Vector2(564, 274)
-atom = ExtResource("11_s4el2")

@@ -2,11 +2,15 @@ class_name Slot extends Area2D
 
 signal up
 
+## If the slot is a result slot
 @export var is_result_slot : bool = false
+## The item that the slot has picked up
 @export var picked_up : Item
 
 var can_pickup = true
+## The items in the slots area that can be picked up
 var in_range : Array
+## Nearest item in the slots in_range
 var nearest : Item
 
 func _process(delta):
@@ -27,7 +31,7 @@ func _process(delta):
 		in_range.sort_custom(get_nearest)
 		nearest = in_range[0]
 
-		if !nearest.picked_up && !nearest.in_slot && can_pickup:
+		if !nearest.is_picked_up && !nearest.in_slot && can_pickup:
 			if global_position != nearest.global_position:
 				nearest.global_position = global_position
 			if nearest != picked_up: pick_up(nearest)
@@ -60,6 +64,6 @@ func _on_area_entered(area):
 
 func _on_area_exited(area):
 	var body = area.get_parent()
-	if picked_up == body && body.picked_up:
+	if picked_up == body && body.is_picked_up:
 		call_deferred("put_down", body)
 	if in_range.has(body): in_range.erase(body)

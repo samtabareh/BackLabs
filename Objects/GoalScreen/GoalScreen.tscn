@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0vnefe61ib4j"]
+[gd_scene load_steps=11 format=3 uid="uid://b0vnefe61ib4j"]
 
 [ext_resource type="Script" path="res://Objects/GoalScreen/GoalScreen.gd" id="1_q5txl"]
 [ext_resource type="Texture2D" uid="uid://4kmlj7clxu0s" path="res://Assets/Sprites/Screen/Screen.png" id="2_k2h74"]
 [ext_resource type="PackedScene" uid="uid://cxtfymvcer1y5" path="res://Objects/Slot/Slot.tscn" id="3_y3ytv"]
-[ext_resource type="Script" path="res://Objects/GoalScreen/AtomDisplay/AtomDisplay.gd" id="4_jxg2r"]
 
 [sub_resource type="Animation" id="Animation_kqh7x"]
 resource_name = "1"
@@ -186,7 +185,6 @@ offset_left = 46.5714
 offset_top = -12.0
 offset_right = 56.5714
 offset_bottom = 11.0
-script = ExtResource("4_jxg2r")
 
 [connection signal="up" from="Slot1" to="." method="_on_slot_up"]
 [connection signal="up" from="Slot2" to="." method="_on_slot_up"]
