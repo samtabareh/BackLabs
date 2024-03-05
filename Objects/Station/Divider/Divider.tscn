@@ -119,12 +119,14 @@ script = ExtResource("1_gf1cr")
 shape = SubResource("RectangleShape2D_uhw8y")
 
 [node name="Slot" parent="." instance=ExtResource("2_wmpp1")]
-position = Vector2(-36, -18)
+visible = false
+position = Vector2(-6, -18)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("2_1j8ri")
 hframes = 7
+frame = 6
 
 [node name="Player" type="AnimationPlayer" parent="Sprite"]
 libraries = {

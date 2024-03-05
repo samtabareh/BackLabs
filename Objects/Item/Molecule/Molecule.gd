@@ -27,8 +27,8 @@ static func compare_molecules(array1, array2):
 
 func _input(event):
 	if event.is_action_released("click") && is_mouse_in:
-		Main.picked_up_item = self if Main.picked_up_item != self else null
-		is_picked_up = Main.picked_up_item == self
+		PickupHandler.picked_up_item = self if PickupHandler.picked_up_item != self else null
+		is_picked_up = PickupHandler.picked_up_item == self
 
 func _on_mouse_entered():
 	is_mouse_in = true

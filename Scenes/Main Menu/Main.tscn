@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7ue81yr5jmvn"]
 
-[ext_resource type="Theme" uid="uid://b87w0gxls3wqd" path="res://Resources/MainMenuButton.tres" id="1_etxde"]
-[ext_resource type="Script" path="res://Scenes/Main Menu/Main.gd" id="1_vxl72"]
+[ext_resource type="Theme" uid="uid://b87w0gxls3wqd" path="res://Resources/Themes/Button.tres" id="1_etxde"]
+[ext_resource type="Script" path="res://Scenes/Main.gd" id="1_vxl72"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vxl72")

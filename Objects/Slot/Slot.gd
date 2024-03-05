@@ -1,5 +1,6 @@
 class_name Slot extends Area2D
 
+## Emitted when the slot has picked up an Item 
 signal up
 
 ## If the slot is a result slot
@@ -7,17 +8,19 @@ signal up
 ## The item that the slot has picked up
 @export var picked_up : Item
 
+## If slot can pick up Items
 var can_pickup = true
 ## The items in the slots area that can be picked up
 var in_range : Array
-## Nearest item in the slots in_range
+## Nearest item in the slot's in_range
 var nearest : Item
 
 func _process(delta):
 	can_pickup = visible
 	if is_result_slot:
 		can_pickup = true
-		visible = false
+		visible = picked_up != null
+		$Plus.visible = false
 		return
 
 	var check = false

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BackLabs"
-config/version="0.2.3"
+config/version="0.2.4"
 run/main_scene="res://Scenes/Main Menu/Main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/show_image=false
@@ -20,8 +20,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 Main="*res://Scripts/Main.gd"
+PickupHandler="*res://Scripts/PickupHandler.gd"
 TranslationSwitcher="*res://Scripts/TranslationSwitcher.gd"
 LevelHandler="*res://Scripts/LevelHandler.gd"
+TypesLoader="*res://Scripts/TypesLoader.gd"
 
 [debug]
 

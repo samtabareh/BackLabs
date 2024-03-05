@@ -1,0 +1,42 @@
+[gd_scene load_steps=12 format=3 uid="uid://vt2dw5ljby21"]
+
+[ext_resource type="PackedScene" uid="uid://bbtpb3qirf85r" path="res://Objects/HUD/HUD.tscn" id="1_113ug"]
+[ext_resource type="PackedScene" uid="uid://cyh64wj7erh5i" path="res://Objects/DisplayText/DisplayText.tscn" id="2_tlufi"]
+[ext_resource type="PackedScene" uid="uid://cwtfe3dr3ec5b" path="res://Objects/Map/Map.tscn" id="3_4lawd"]
+[ext_resource type="PackedScene" uid="uid://b0vnefe61ib4j" path="res://Objects/GoalScreen/GoalScreen.tscn" id="4_tp6uu"]
+[ext_resource type="Resource" uid="uid://cg678h3ynecdy" path="res://Resources/Molecules/CO2.tres" id="5_15lmt"]
+[ext_resource type="PackedScene" uid="uid://e0fq4saymcm1" path="res://Objects/Station/Divider/Divider.tscn" id="6_tnfx8"]
+[ext_resource type="PackedScene" uid="uid://qeti6qadlgpj" path="res://Objects/Station/Infuser/Infuser.tscn" id="7_7mfu3"]
+[ext_resource type="PackedScene" uid="uid://cwuflur1avovq" path="res://Objects/Item/Atom/Atom.tscn" id="8_c7c80"]
+[ext_resource type="Resource" uid="uid://g21ojse7kxs3" path="res://Resources/Atoms/O.tres" id="9_ucp7q"]
+[ext_resource type="PackedScene" uid="uid://0utnmhclas31" path="res://Objects/Item/Molecule/Molecule.tscn" id="10_7sn51"]
+[ext_resource type="Resource" uid="uid://dxkiillqp6bcn" path="res://Resources/Molecules/CO.tres" id="11_xl2h8"]
+
+[node name="Template" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Hud" parent="." instance=ExtResource("1_113ug")]
+
+[node name="DisplayText" parent="." instance=ExtResource("2_tlufi")]
+
+[node name="Map" parent="." instance=ExtResource("3_4lawd")]
+
+[node name="GoalScreen" parent="." instance=ExtResource("4_tp6uu")]
+position = Vector2(640, 158)
+molecule = ExtResource("5_15lmt")
+
+[node name="Divider" parent="." instance=ExtResource("6_tnfx8")]
+position = Vector2(899, 288)
+
+[node name="Infuser" parent="." instance=ExtResource("7_7mfu3")]
+position = Vector2(256, 232)
+
+[node name="Atom" parent="." instance=ExtResource("8_c7c80")]
+position = Vector2(544, 288)
+atom = ExtResource("9_ucp7q")
+
+[node name="Molecule" parent="." instance=ExtResource("10_7sn51")]
+position = Vector2(736, 288)
+molecule = ExtResource("11_xl2h8")

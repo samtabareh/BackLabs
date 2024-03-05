@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="MoleculeT" load_steps=3 format=3 uid="uid://dowtj5vw5bnvm"]
-
-[ext_resource type="Script" path="res://Resources/Types/MoleuleT.gd" id="1_28giw"]
-[ext_resource type="Resource" uid="uid://b5oi42k5vw5r3" path="res://Resources/Atoms/Empty.tres" id="1_ldjna"]
-
-[resource]
-script = ExtResource("1_28giw")
-Name = "Empty"
-Atoms = Array[Resource("res://Resources/Types/AtomT.gd")]([ExtResource("1_ldjna")])

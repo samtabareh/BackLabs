@@ -21,14 +21,17 @@ func Action():
 	
 	# See what molecule matches our current one.
 	var check = false
-	for molecule in Lists.Molecules:
-		var m = Lists.Molecules[molecule]
-		check = Molecule.compare_molecules(Atoms, m.Atoms)
+	for molecule in TypesLoader.Molecules:
+		var m = TypesLoader.Molecules[molecule]
+		deposit = rSlot.picked_up
+		
+		if deposit: check = Molecule.compare_molecules(Atoms+deposit.Atoms, m.Atoms)
+		else: check = Molecule.compare_molecules(Atoms, m.Atoms)
+		
 		if check:
 			in_use = true
 			player.play("use")
 			await player.animation_finished
-			deposit = rSlot.picked_up
 			if !deposit:
 				var temp = load("res://Objects/Item/Molecule/Molecule.tscn")
 				deposit = temp.instantiate()

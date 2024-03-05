@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AtomT" load_steps=2 format=3 uid="uid://br4l5ci0r0oyl"]
+
+[ext_resource type="Script" path="res://Resources/Types/AtomT.gd" id="1_5n4ci"]
+
+[resource]
+script = ExtResource("1_5n4ci")
+Name = "C"
+Valence = 4
+P = 6

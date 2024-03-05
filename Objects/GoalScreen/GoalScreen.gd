@@ -6,7 +6,7 @@ class_name GoalScreen extends Node
 
 ## Amount of inputs that the screen will take in.
 @export_range(1, 3) var Inputs : int = 1
-@export var molecule : MoleculeT = Lists.Molecules["H2O"]
+@export var molecule : MoleculeT = TypesLoader.Molecules["H2O"]
 @export var Result_Scene : PackedScene
 
 # Slots that are being used. (based on inputs)

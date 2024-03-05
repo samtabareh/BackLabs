@@ -6,3 +6,4 @@
 script = ExtResource("1_mxalr")
 Name = "O"
 Valence = 2
+P = 8

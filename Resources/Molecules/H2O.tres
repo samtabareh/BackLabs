@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MoleculeT" load_steps=4 format=3 uid="uid://cxy6gm2brq88q"]
 
-[ext_resource type="Script" path="res://Resources/Types/MoleuleT.gd" id="1_voku7"]
+[ext_resource type="Script" path="res://Resources/Types/MoleculeT.gd" id="1_voku7"]
 [ext_resource type="Resource" uid="uid://ojv00prh55l7" path="res://Resources/Atoms/H.tres" id="1_wn1pv"]
 [ext_resource type="Resource" uid="uid://g21ojse7kxs3" path="res://Resources/Atoms/O.tres" id="2_p7sei"]
 

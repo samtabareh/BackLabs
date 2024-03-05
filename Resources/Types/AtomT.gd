@@ -3,3 +3,4 @@ class_name AtomT extends Resource
 
 @export var Name : String
 @export var Valence : int
+@export var P : int

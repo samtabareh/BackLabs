@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	LevelHandler.init_levels()
+	TypesLoader.init_dicts()
 
 func _on_start_pressed():
 	LevelHandler.change_level(LevelHandler.Levels["Main"][1])
