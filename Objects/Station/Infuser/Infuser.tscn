@@ -8,7 +8,7 @@
 
 [sub_resource type="Animation" id="Animation_ho3ll"]
 resource_name = "default"
-length = 1.25
+length = 0.1
 loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
@@ -201,7 +201,7 @@ shape = ExtResource("2_togwr")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("4_raouy")
+texture = ExtResource("3_vnmlr")
 
 [node name="Player" type="AnimationPlayer" parent="Sprite"]
 libraries = {

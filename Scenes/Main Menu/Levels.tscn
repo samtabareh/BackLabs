@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://vsmescts0c6g"]
+
+[ext_resource type="Script" path="res://Scenes/Main Menu/Levels.gd" id="1_ib2ds"]
+[ext_resource type="Theme" uid="uid://b87w0gxls3wqd" path="res://Resources/Themes/Button.tres" id="2_5gmbv"]
+
+[node name="Levels" type="Node2D"]
+script = ExtResource("1_ib2ds")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.235294, 0.501961, 0.52549, 0.686275)
+
+[node name="Exit" type="VBoxContainer" parent="CanvasLayer" groups=["UI"]]
+layout_direction = 2
+offset_right = 168.0
+offset_bottom = 96.0
+
+[node name="Exit" type="Button" parent="CanvasLayer/Exit"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_5gmbv")
+text = "Exit
+"
+
+[node name="Levels" type="HBoxContainer" parent="CanvasLayer" groups=["UI"]]
+layout_direction = 2
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.177778
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Levels"]
+layout_mode = 2
+
+[node name="Main Menu" type="Button" parent="CanvasLayer/Levels/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_5gmbv")
+text = "Main Menu
+"
+
+[connection signal="pressed" from="CanvasLayer/Exit/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Levels/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

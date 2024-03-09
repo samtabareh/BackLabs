@@ -10,6 +10,9 @@ func _on_start_pressed():
 func _on_tutorial_pressed():
 	LevelHandler.change_level(LevelHandler.Levels["Tutorial"][1])
 
+func _on_levels_pressed():
+	LevelHandler.change_level("res://Scenes/Main Menu/Levels.tscn")
+
 func _on_exit_pressed():
 	get_tree().quit()
 
@@ -18,3 +21,4 @@ func _on_en_pressed():
 
 func _on_fa_pressed():
 	TranslationSwitcher.UpdateUI("fa")
+

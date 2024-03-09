@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MoleculeT" load_steps=4 format=3 uid="uid://ce51t4cd6gpi5"]
+
+[ext_resource type="Resource" uid="uid://ojv00prh55l7" path="res://Resources/Atoms/H.tres" id="1_n8076"]
+[ext_resource type="Resource" uid="uid://g21ojse7kxs3" path="res://Resources/Atoms/O.tres" id="2_6s0fl"]
+[ext_resource type="Script" path="res://Resources/Types/MoleculeT.gd" id="3_nm5xr"]
+
+[resource]
+script = ExtResource("3_nm5xr")
+Name = "H2O2"
+Atoms = Array[Resource("res://Resources/Types/AtomT.gd")]([ExtResource("1_n8076"), ExtResource("1_n8076"), ExtResource("2_6s0fl"), ExtResource("2_6s0fl")])

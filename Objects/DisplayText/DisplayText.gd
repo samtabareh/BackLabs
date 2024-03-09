@@ -18,9 +18,10 @@ func text(a : Array):
 		if !s is String: continue
 		label.name = s
 		show()
-		if s.length() > 10: player.play("Reveal1")
-		if s.length() < 24: player.play("Reveal2")
-		else: player.play("Reveal3")
+		player.play("RESET")
+		player.play("Reveal", 1, clamp(s.length()/5, .5, 1.5))
+		#if s.length() < 24: player.play("Reveal2")
+		#else: player.play("Reveal3")
 		await player.animation_finished
 		await box_clicked
 	hide()

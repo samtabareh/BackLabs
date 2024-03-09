@@ -47,7 +47,6 @@ text = "Continue
 "
 
 [node name="Levels" type="Button" parent="Layer/Game"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("2_ldu36")
@@ -103,7 +102,7 @@ text = "Menu
 "
 
 [connection signal="pressed" from="Layer/Game/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="Layer/Game/Levels" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Layer/Game/Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="Layer/Game/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Layer/Language/English" to="." method="_on_english_pressed"]
 [connection signal="pressed" from="Layer/Language/Farsi" to="." method="_on_farsi_pressed"]

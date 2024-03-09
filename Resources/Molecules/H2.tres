@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MoleculeT" load_steps=3 format=3 uid="uid://7ss6owkisa8w"]
+
+[ext_resource type="Resource" uid="uid://ojv00prh55l7" path="res://Resources/Atoms/H.tres" id="1_armqa"]
+[ext_resource type="Script" path="res://Resources/Types/MoleculeT.gd" id="3_gq8gi"]
+
+[resource]
+script = ExtResource("3_gq8gi")
+Name = "H2"
+Atoms = Array[Resource("res://Resources/Types/AtomT.gd")]([ExtResource("1_armqa"), ExtResource("1_armqa")])

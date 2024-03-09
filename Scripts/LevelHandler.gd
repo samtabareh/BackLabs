@@ -1,5 +1,6 @@
 extends Main
 
+## { "Category": { 1: Level, 2: Level2 }, "Category2": { 1: Level } }
 var Levels : Dictionary
 var path = "res://Scenes/Levels/"
 var id = "LevelHandler"
@@ -17,8 +18,8 @@ var id = "LevelHandler"
 		return
 
 func init_levels():
-	var dir = DirAccess.open(path)
 	Levels = {}
+	var dir = DirAccess.open(path)
 	load_dir(dir)
 
 func next_level() -> Level:

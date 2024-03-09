@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7ue81yr5jmvn"]
 
 [ext_resource type="Theme" uid="uid://b87w0gxls3wqd" path="res://Resources/Themes/Button.tres" id="1_etxde"]
-[ext_resource type="Script" path="res://Scenes/Main.gd" id="1_vxl72"]
+[ext_resource type="Script" path="res://Scenes/Main Menu/Main.gd" id="1_vxl72"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vxl72")
@@ -75,8 +75,23 @@ theme = ExtResource("1_etxde")
 text = "Farsi
 "
 
+[node name="Levels" type="VBoxContainer" parent="CanvasLayer" groups=["UI"]]
+layout_direction = 2
+offset_right = 243.0
+offset_bottom = 96.0
+scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Levels" type="Button" parent="CanvasLayer/Levels"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_etxde")
+text = "Levels"
+
 [connection signal="pressed" from="CanvasLayer/Game/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Game/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="CanvasLayer/Game/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Language/English" to="." method="_on_en_pressed"]
 [connection signal="pressed" from="CanvasLayer/Language/Farsi" to="." method="_on_fa_pressed"]
+[connection signal="pressed" from="CanvasLayer/Levels/Levels" to="." method="_on_levels_pressed"]
