@@ -3,22 +3,19 @@ extends Node2D
 @onready var Display : DisplayText = $DisplayText
 
 func _ready():
-	await Display.text(["Tut1", "Tut2", "Tut3", "Tut4"])
+	await Display.text(["Tutorial_1-1", "Tutorial_1-2", "Tutorial_1-3", "Tutorial_1-4"])
 	
 	$Atom.visible = true
-	await Display.text(["Tut11"])
+	await Display.text(["Tutorial_1-5"])
 	
 	$Molecule.visible = true
-	await Display.text(["Tut5","Tut6","Tut7"])
+	await Display.text(["Tutorial_1-6","Tutorial_1-7","Tutorial_1-8"])
 	
 	$Slot.visible = true
-	await Display.text(["Tut8"])
+	await Display.text(["Tutorial_1-9"])
 	
 	$Infuser.visible = true
-	await Display.text(["Tut9","Tut10", "Tut12"])
-	
-	$Divider.visible = true
-	await Display.text(["Tut13"])
+	await Display.text(["Tutorial_1-10","Tutorial_1-11","Tutorial_1-12"])
 	
 	$GoalScreen.visible = true
-	await Display.text(["Tut14","Tut15","Tut16"])
+	await Display.text(["Tutorial_1-13","Tutorial_1-14","Tutorial_1-15"])

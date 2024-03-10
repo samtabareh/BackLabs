@@ -1,0 +1,49 @@
+[gd_scene load_steps=13 format=3 uid="uid://br6iqwew8iwpl"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/Tutorial/2.gd" id="1_jdffp"]
+[ext_resource type="PackedScene" uid="uid://bbtpb3qirf85r" path="res://Objects/HUD/HUD.tscn" id="2_cm4s0"]
+[ext_resource type="PackedScene" uid="uid://cyh64wj7erh5i" path="res://Objects/DisplayText/DisplayText.tscn" id="3_ia8bg"]
+[ext_resource type="PackedScene" uid="uid://cwtfe3dr3ec5b" path="res://Objects/Map/Map.tscn" id="4_38706"]
+[ext_resource type="PackedScene" uid="uid://b0vnefe61ib4j" path="res://Objects/GoalScreen/GoalScreen.tscn" id="5_i3axl"]
+[ext_resource type="Resource" uid="uid://cg678h3ynecdy" path="res://Resources/Molecules/CO2.tres" id="6_6mg02"]
+[ext_resource type="Resource" uid="uid://ce51t4cd6gpi5" path="res://Resources/Molecules/H2O2.tres" id="6_a1e8k"]
+[ext_resource type="PackedScene" uid="uid://e0fq4saymcm1" path="res://Objects/Station/Divider/Divider.tscn" id="7_2b0b3"]
+[ext_resource type="PackedScene" uid="uid://by36u0qvfcfig" path="res://Scenes/Levels/Main/2.tscn" id="7_husbt"]
+[ext_resource type="PackedScene" uid="uid://qeti6qadlgpj" path="res://Objects/Station/Infuser/Infuser.tscn" id="8_klxp7"]
+[ext_resource type="Resource" uid="uid://7ss6owkisa8w" path="res://Resources/Molecules/H2.tres" id="11_njldx"]
+[ext_resource type="PackedScene" uid="uid://0utnmhclas31" path="res://Objects/Item/Molecule/Molecule.tscn" id="11_q72k3"]
+
+[node name="2" type="Node2D"]
+script = ExtResource("1_jdffp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Hud" parent="." instance=ExtResource("2_cm4s0")]
+
+[node name="DisplayText" parent="." instance=ExtResource("3_ia8bg")]
+
+[node name="Map" parent="." instance=ExtResource("4_38706")]
+
+[node name="GoalScreen" parent="." instance=ExtResource("5_i3axl")]
+visible = false
+position = Vector2(640, 158)
+molecule = ExtResource("6_a1e8k")
+Result_Scene = ExtResource("7_husbt")
+
+[node name="Divider" parent="." instance=ExtResource("7_2b0b3")]
+position = Vector2(899, 288)
+
+[node name="Infuser" parent="." instance=ExtResource("8_klxp7")]
+visible = false
+position = Vector2(256, 232)
+
+[node name="CO2" parent="." instance=ExtResource("11_q72k3")]
+visible = false
+position = Vector2(736, 288)
+molecule = ExtResource("6_6mg02")
+
+[node name="H2" parent="." instance=ExtResource("11_q72k3")]
+visible = false
+position = Vector2(544, 288)
+molecule = ExtResource("11_njldx")

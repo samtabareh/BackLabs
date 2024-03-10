@@ -33,10 +33,10 @@ position = Vector2(899, 288)
 [node name="Infuser" parent="." instance=ExtResource("7_7mfu3")]
 position = Vector2(256, 232)
 
-[node name="Atom" parent="." instance=ExtResource("8_c7c80")]
+[node name="O" parent="." instance=ExtResource("8_c7c80")]
 position = Vector2(544, 288)
 atom = ExtResource("9_ucp7q")
 
-[node name="Molecule" parent="." instance=ExtResource("10_7sn51")]
+[node name="CO" parent="." instance=ExtResource("10_7sn51")]
 position = Vector2(736, 288)
 molecule = ExtResource("11_xl2h8")

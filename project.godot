@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="BackLabs"
-config/version="0.2.5"
+config/version="0.3.0"
 run/main_scene="res://Scenes/Main Menu/Main.tscn"
+config/use_custom_user_dir=true
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -20,10 +21,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 Main="*res://Scripts/Main.gd"
-PickupHandler="*res://Scripts/PickupHandler.gd"
-TranslationSwitcher="*res://Scripts/TranslationSwitcher.gd"
-LevelHandler="*res://Scripts/LevelHandler.gd"
 TypesLoader="*res://Scripts/TypesLoader.gd"
+LevelHandler="*res://Scripts/LevelHandler.gd"
+SaveHandler="*res://Scripts/SaveHandler.gd"
+InputHandler="*res://Scripts/InputHandler.gd"
+TranslationSwitcher="*res://Scripts/TranslationSwitcher.gd"
 
 [debug]
 
@@ -84,9 +86,25 @@ midclick={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":4,"position":Vector2(115, 10),"global_position":Vector2(119, 51),"factor":1.0,"button_index":3,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+dev-skip={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":75,"key_label":0,"unicode":107,"echo":false,"script":null)
+]
+}
+dev={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":79,"key_label":0,"unicode":111,"echo":false,"script":null)
+]
+}
+dev-show={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":76,"key_label":0,"unicode":108,"echo":false,"script":null)
+]
+}
 
 [internationalization]
 
+locale/translation_remaps={}
 locale/translations=PackedStringArray("res://Localization - Sheet1.en.translation", "res://Localization - Sheet1.fa.translation")
 
 [rendering]

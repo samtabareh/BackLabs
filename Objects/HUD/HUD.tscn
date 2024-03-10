@@ -50,7 +50,14 @@ text = "Continue
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("2_ldu36")
-text = "Main Menu
+text = "Levels
+"
+
+[node name="Save" type="Button" parent="Layer/Game"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ldu36")
+text = "Save
 "
 
 [node name="Exit" type="Button" parent="Layer/Game"]
@@ -86,6 +93,24 @@ theme = ExtResource("2_ldu36")
 text = "Farsi
 "
 
+[node name="Level" type="VBoxContainer" parent="Layer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -23.0
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Level" type="Label" parent="Layer/Level"]
+layout_mode = 2
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Menu" type="Button" parent="CanvasLayer" groups=["UI"]]
@@ -103,6 +128,7 @@ text = "Menu
 
 [connection signal="pressed" from="Layer/Game/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Layer/Game/Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="Layer/Game/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Layer/Game/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Layer/Language/English" to="." method="_on_english_pressed"]
 [connection signal="pressed" from="Layer/Language/Farsi" to="." method="_on_farsi_pressed"]

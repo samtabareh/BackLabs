@@ -1,34 +1,38 @@
 ;en;fa
 None;;
+English;English;انگلیسی
+Farsi;Farsi;فارسی
 Start;Start;شروع
 Continue;Continue;ادامه
 Exit;Exit;خروج
 Menu;Menu;منو
 Main Menu;Main Menu;منو اصلی
 Levels;Levels;مرحله ها
-English;English;انگلیسی
-Farsi;Farsi;فارسی
-Tutorial;Tutorial;آموزش
-Tut1;Hi, welcome to the BackLabs!;سلام خوش امدید به آزمایشگاه اتم ها!
-Tut2;Here we strive to make the best materials out of atoms!;اینجا ما سعی می کنیم که بهترین ماده ها را از اتم ها بسازیم!
-Tut3;But don't get excited too soon, you are only in training and won't be making any cool stuff yet;به این زودی خوشحال نشو! تو هنوز توی مرحلۀ تمرینات هستی و مواد باحالی نمیسازی
-Tut4;So lets give you the basics;خب بیا شروع کنیم
-Tut5;And this is a Molecule;و این یک مولکول!
-Tut6;Those numbers and letters written on it are its atoms;این حروف ها نوع و عدد ها تعداد اتم های سازنده اش هستند
-Tut7;You can grab it by left-clicking on it;با چپ-کلیک کرن روی هرکدام می تونی آنها را برداری
-Tut8;This is a slot, you can put Atoms and Molecules in it for the machines to use them;این یک جعبه هست. می تونی توی این مولکول یا اتم بذاری که استفاده بشن توسط دستگاه ها
-Tut9;Speaking of machines, here is the Infuser!;صحبت از دستگاه شد, این دستگاه مخلوط کن هست!
-Tut10;The Infuser is a machine with 6 slots. When right-clicked it will start infusing all of the atoms and molecules put in its slots;مخلوط کن دستگاهی هست با 6 جعبه. این دستگاه با راست-کلیک شروع می کند به مخلوط همه اتم ها و مولکول های توی جعبه هایش
-Tut11;This is an Atom;این یک اتم هست!
-Tut12;Now that we're on the subject of infusing, we should probably show you how you can seperate atoms!;اکنون که روی موضوع مخلوط کردن هستیم, بهتره که بهت نشون بدیم که چطوری جدا کنی اتم هارو
-Tut13;This is the Divider, if it's not already clear enough from the name, it divides atoms!;این دستگاه جداکننده هست که اتم هارو جدا میکنه
-Tut14;This is the Goal Screen. It displays what molecule you need to make to pass the level;این صفحه نمایش، مولکول مورد نیاز برای گذر از مرحله را نشان می دهد
-Tut15;How do you answer with a molecule? Well, you put it in the slot of the Goal Screen!;برای ثبت مولکول خود باید آن را درون جعبۀ صفحه نمایش قرار بدهید
-Tut16;Now, I want you to pass this level!;حالا ازت میخوام که این مرحله رو رد کنی!
-Win;You Won!;درست!
+Save;Save;ذخیره
+Load;Load;بارگیری
 NoneMolecule;Resulting molecule from this infusion is not possible;مولکول حاصل از این عملیات وجود ندارد
-Main_CO2_1-1;CO2 can be used to extinguish flames by filling the environment around a flame with the gas!;می دانستید که کربن دی‌اکسید می‌تواند با پر کردن محیط دور یک شعله آن را خاموش کند...
-Main_CO2_1-2;It does not itself react to extinguish the flame, but starves the flame of oxygen by displacing it;خود گاز با شعله واکنش نشان نمی دهد بلکه دسترسی به اکسیژن آن را از بین می برد!
-Main_CO2_1-3;This is how fire extinguishers work!;کپسول های آتش نشانی به این طور کار می کنند!
-Main_H2O_2-1;Water also known as H2O is a transparent, tasteless, odorless, and nearly colorless substance!;آب یا همان H2O ماده ای شفاف، بی‌مزه، بی‌بو و تقریباً بی‌رنگ است!
-Main_H2O_2-2;It is known as the universal solvent, because it dissolves many things!;این ماده به دلیل قابلیت آن در حل مواد بسیار زیادی به عنوان «حلال جهانی» شناخته می‌شود!
+Tutorial;Tutorial;آموزش
+Tutorial_1-1;Hi, welcome to the BackLabs!;سلام خوش امدید به آزمایشگاه اتم ها!
+Tutorial_1-2;Here we strive to make the best materials out of atoms!;اینجا ما سعی می کنیم که بهترین ماده ها را از اتم ها بسازیم!
+Tutorial_1-3;But don't get excited too soon, you are only in training and won't be making any cool stuff yet;به این زودی خوشحال نشو! تو هنوز توی مرحلۀ تمرینات هستی و مواد باحالی نمیسازی
+Tutorial_1-4;So lets give you the basics;خب بیا شروع کنیم
+Tutorial_1-5;This is an Atom;این یک اتم هست!
+Tutorial_1-6;And this is a Molecule;و این یک مولکول!
+Tutorial_1-7;Those numbers and letters written on the molecule are its atoms;این حروف ها نوع و عددها تعداد اتم های سازنده مولکول هستند
+Tutorial_1-8;You can grab them by left-clicking on them;با چپ-کلیک کرن روی هرکدام از آنها می توانی آنها را برداری
+Tutorial_1-9;This is a slot, you can put Atoms and Molecules in it for the machines to use them;این یک جعبه هست. می تونی توی این مولکول یا اتم بذاری که استفاده بشوند توسط دستگاه ها
+Tutorial_1-10;Speaking of machines, here is the Infuser!;صحبت از دستگاه ها شد, این دستگاه مخلوط کن هست!
+Tutorial_1-11;The Infuser is a machine with 6 slots;مخلوط کن دستگاهی هست با 6 جعبه
+Tutorial_1-12;When right-clicked it will start infusing all of the Atoms and Molecules put in its slots!;این دستگاه با راست-کلیک شروع می کند به مخلوط همه اتم ها و مولکول های توی جعبه هایش!
+Tutorial_1-13;This is the Goal Screen. It displays what molecule you need to make to pass the level;این صفحه نمایش، مولکول مورد نیاز برای گذر از مرحله را نشان می دهد
+Tutorial_1-14;How do you answer with a molecule? Well, you put it in the slot of the Goal Screen!;برای ثبت مولکول خود باید آن را درون جعبۀ صفحه نمایش قرار بدهید
+Tutorial_1-15;Now, I want you to pass this level!;حالا ازت میخوام که این مرحله رو رد کنی!
+Tutorial_2-1;Now we should probably show you how you can seperate atoms using the...;حالا وقتش است که بهت نشون بدیم چطوری می توانی اتم ها را جدا کنی...
+Tutorial_2-2;Divider!;دستگاه جداکننده!
+Tutorial_2-3;It divides the atoms of what ever is put in its slot;اتم های هر چیزی که داخل جعبه اش قرار گرفتد را از هم جدا می کند
+Tutorial_2-4;It'll start when right-clicked;با راست-کلیک کردن شروع به کار می کند
+Main_1-1;CO2 can be used to extinguish flames by filling the environment around a flame with the gas!;می دانستید که کربن دی‌اکسید می‌تواند با پر کردن محیط دور یک شعله آن را خاموش کند...
+Main_1-2;It does not itself react to extinguish the flame, but starves the flame of oxygen by displacing it;خود گاز با شعله واکنش نشان نمی دهد بلکه دسترسی به اکسیژن آن را از بین می برد!
+Main_1-3;This is how fire extinguishers work!;کپسول های آتش نشانی به این طور کار می کنند!
+Main_2-1;Water also known as H2O is a transparent, tasteless, odorless, and nearly colorless substance!;آب یا همان H2O ماده ای شفاف، بی‌مزه، بی‌بو و تقریباً بی‌رنگ است!
+Main_2-2;It is known as the universal solvent, because it dissolves many things!;این ماده به دلیل قابلیت آن در حل مواد بسیار زیادی به عنوان «حلال جهانی» شناخته می‌شود!

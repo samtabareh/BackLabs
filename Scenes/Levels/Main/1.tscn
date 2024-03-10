@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://btn0f6543n84d"]
+[gd_scene load_steps=13 format=3 uid="uid://btn0f6543n84d"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/Main/CO2_1.gd" id="1_7cjts"]
+[ext_resource type="Script" path="res://Scenes/Levels/Main/1.gd" id="1_7cjts"]
 [ext_resource type="PackedScene" uid="uid://bbtpb3qirf85r" path="res://Objects/HUD/HUD.tscn" id="2_n4m6a"]
 [ext_resource type="PackedScene" uid="uid://cyh64wj7erh5i" path="res://Objects/DisplayText/DisplayText.tscn" id="3_l3lsa"]
 [ext_resource type="PackedScene" uid="uid://cwtfe3dr3ec5b" path="res://Objects/Map/Map.tscn" id="4_2euth"]
 [ext_resource type="PackedScene" uid="uid://b0vnefe61ib4j" path="res://Objects/GoalScreen/GoalScreen.tscn" id="5_ur3h5"]
 [ext_resource type="Resource" uid="uid://cg678h3ynecdy" path="res://Resources/Molecules/CO2.tres" id="6_bn5s0"]
-[ext_resource type="PackedScene" uid="uid://e0fq4saymcm1" path="res://Objects/Station/Divider/Divider.tscn" id="7_46i6e"]
+[ext_resource type="PackedScene" uid="uid://br6iqwew8iwpl" path="res://Scenes/Levels/Tutorial/2.tscn" id="7_2q8qw"]
 [ext_resource type="PackedScene" uid="uid://qeti6qadlgpj" path="res://Objects/Station/Infuser/Infuser.tscn" id="8_ap12r"]
 [ext_resource type="PackedScene" uid="uid://0utnmhclas31" path="res://Objects/Item/Molecule/Molecule.tscn" id="9_h28tr"]
-[ext_resource type="Resource" uid="uid://cxy6gm2brq88q" path="res://Resources/Molecules/H2O.tres" id="10_mo5jm"]
+[ext_resource type="PackedScene" uid="uid://cwuflur1avovq" path="res://Objects/Item/Atom/Atom.tscn" id="10_vv8fc"]
+[ext_resource type="Resource" uid="uid://g21ojse7kxs3" path="res://Resources/Atoms/O.tres" id="11_ca48d"]
 [ext_resource type="Resource" uid="uid://dxkiillqp6bcn" path="res://Resources/Molecules/CO.tres" id="11_ta2fg"]
 
 [node name="1" type="Node2D"]
@@ -27,17 +28,15 @@ anchor_mode = 0
 [node name="GoalScreen" parent="." instance=ExtResource("5_ur3h5")]
 position = Vector2(640, 158)
 molecule = ExtResource("6_bn5s0")
-
-[node name="Divider" parent="." instance=ExtResource("7_46i6e")]
-position = Vector2(899, 288)
+Result_Scene = ExtResource("7_2q8qw")
 
 [node name="Infuser" parent="." instance=ExtResource("8_ap12r")]
 position = Vector2(256, 232)
 
-[node name="H2O" parent="." instance=ExtResource("9_h28tr")]
-position = Vector2(736, 288)
-molecule = ExtResource("10_mo5jm")
-
 [node name="CO" parent="." instance=ExtResource("9_h28tr")]
-position = Vector2(544, 288)
+position = Vector2(736, 288)
 molecule = ExtResource("11_ta2fg")
+
+[node name="O" parent="." instance=ExtResource("10_vv8fc")]
+position = Vector2(544, 288)
+atom = ExtResource("11_ca48d")

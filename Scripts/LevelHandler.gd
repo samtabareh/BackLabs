@@ -1,21 +1,27 @@
 extends Main
 
 ## { "Category": { 1: Level, 2: Level2 }, "Category2": { 1: Level } }
-var Levels : Dictionary
+var Levels := {}
+## Contains the path for levels not the levels
+var UnlockedLevels : Array[Level] = []
+
+var Id = "LevelHandler"
 var path = "res://Scenes/Levels/"
-var id = "LevelHandler"
 
 @onready var current_level : Level :
 	get:
 		var temp = get_tree().current_scene.scene_file_path
-		for cat in Levels.keys():
-			var ids = Levels[cat]
+		for category in Levels.keys():
+			var ids = Levels[category]
 			for id in ids:
-				var level : Level = Levels[cat][id]
+				var level : Level = Levels[category][id]
 				if level.Path == temp:
 					current_level = level
 					return current_level
 		return
+
+func _ready():
+	LevelHandler.init_levels()
 
 func init_levels():
 	Levels = {}
@@ -27,11 +33,20 @@ func next_level() -> Level:
 	if next == null: push_error("No other level exists")
 	return next
 
+func get_level_from_path(path : String):
+	if Levels.is_empty(): return
+	for category in Levels.values():
+		for level : Level in category.values():
+			if path == level.Path: return level
+
 func change_level(level):
 	if !level is Level && !level is String:
 		push_error("Invalid level given, expected a Level res or path String.")
-	if level is Level: get_tree().change_scene_to_file(level.Path)
-	elif level is String: get_tree().change_scene_to_file(level)
+	
+	if level is String: get_tree().change_scene_to_file(level)
+	if level is Level:
+		if !UnlockedLevels.has(level): UnlockedLevels.append(level)
+		get_tree().change_scene_to_file(level.Path)
 
 func load_dir(dir : DirAccess):
 	if dir:
@@ -44,7 +59,7 @@ func load_dir(dir : DirAccess):
 				file_name = file_name.trim_suffix(".remap")
 			
 			if not dir.current_is_dir():
-				print_as(id, "Found file: "+file_name)
+				print_as(Id, "Found file: "+file_name)
 				
 				var num = file_name.get_slice("_",1)
 				num = num.get_slice(".",0)
@@ -52,14 +67,14 @@ func load_dir(dir : DirAccess):
 				var file_path = path+folder_name+'/'+file_name
 				
 				if file_name.split(".", 1)[1] == "tscn":
-					print_as(id, "Adding file: "+ file_path +" to "+folder_name)
+					print_as(Id, "Adding file: "+ file_path+ " to "+ folder_name)
 					
 					if Levels.get(folder_name) == null:
 						Levels[folder_name] = {}
 					var level = Level.new().Level(int(num),file_name,folder_name,file_path)
 					Levels[folder_name][level.Id] = level
 			else:
-				print_as(id, "Found directory: " + file_name)
+				print_as(Id, "Found directory: "+ file_name)
 				Levels[folder_name] = {}
 				
 				var new_dir = DirAccess.open(dir.get_current_dir()+"/"+file_name)
@@ -67,6 +82,6 @@ func load_dir(dir : DirAccess):
 			
 			file_name = dir.get_next()
 	else:
-		print_as(id, "An error occurred when trying to access the path. Error: "+
+		print_as(Id, "An error occurred when trying to access the path. Error: "+
 		str(DirAccess.get_open_error()))
 	Levels.erase("Levels")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MoleculeT" load_steps=4 format=3 uid="uid://cnqo3kfed2qo7"]
+
+[ext_resource type="Resource" uid="uid://br4l5ci0r0oyl" path="res://Resources/Atoms/C.tres" id="1_4b0xy"]
+[ext_resource type="Resource" uid="uid://ojv00prh55l7" path="res://Resources/Atoms/H.tres" id="1_k3kne"]
+[ext_resource type="Script" path="res://Resources/Types/MoleculeT.gd" id="3_7jhmi"]
+
+[resource]
+script = ExtResource("3_7jhmi")
+Name = "C6H12O6"
+Atoms = Array[Resource("res://Resources/Types/AtomT.gd")]([ExtResource("1_4b0xy"), ExtResource("1_4b0xy"), ExtResource("1_4b0xy"), ExtResource("1_4b0xy"), ExtResource("1_4b0xy"), ExtResource("1_4b0xy"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_k3kne"), ExtResource("1_4b0xy"), ExtResource("1_4b0xy"), ExtResource("1_4b0xy"), ExtResource("1_4b0xy"), ExtResource("1_4b0xy"), ExtResource("1_4b0xy")])

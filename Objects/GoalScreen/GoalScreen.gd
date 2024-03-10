@@ -14,6 +14,10 @@ var on_slots : Array[Slot]
 # A boolean to prevent the animations playing in a loop.
 var play_anim = true
 
+func _input(event):
+	if Input.is_action_just_released("dev-skip") && Main.is_dev:
+		win(true)
+
 func _ready():
 	for s in slots:
 		s.visible = false
@@ -54,14 +58,22 @@ func _process(delta):
 			player.play("wrong")
 			play_anim = false
 
-func win():
-	player.play("win")
+func win(instant = false):
+	# If we havent unlocked this level
+	if !LevelHandler.UnlockedLevels.has(LevelHandler.current_level):
+		# Unlock level
+		LevelHandler.UnlockedLevels.append(LevelHandler.current_level)
+	SaveHandler.save_game()
+	
 	play_anim = false
-	var node1 : DisplayText
-	for node in get_parent().get_children():
-		if node is DisplayText:
-			node1 = node
-			await node1.text(["Win"])
+	
+	# Play win anim 2 times
+	if !instant:
+		for i in range(1):
+			player.play("win")
+			await player.animation_finished
+		
+	# Move on to the next level
 	if Result_Scene != null: LevelHandler.change_level(Result_Scene.resource_path)
 	else: LevelHandler.change_level(LevelHandler.next_level())
 

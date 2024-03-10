@@ -21,9 +21,9 @@ layout_direction = 2
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -164.0
+offset_top = -148.0
 offset_right = 290.0
-offset_bottom = 132.0
+offset_bottom = 148.0
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -36,13 +36,13 @@ text = "Start"
 
 [node name="Tutorial" type="Button" parent="CanvasLayer/Game"]
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_vertical = 8
 theme = ExtResource("1_etxde")
 text = "Tutorial"
 
 [node name="Exit" type="Button" parent="CanvasLayer/Game"]
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_vertical = 0
 theme = ExtResource("1_etxde")
 text = "Exit
 "
@@ -75,6 +75,32 @@ theme = ExtResource("1_etxde")
 text = "Farsi
 "
 
+[node name="Save" type="HBoxContainer" parent="CanvasLayer" groups=["UI"]]
+layout_direction = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.0
+offset_right = 157.0
+offset_bottom = 96.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Save" type="Button" parent="CanvasLayer/Save"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_etxde")
+text = "Save"
+
+[node name="Load" type="Button" parent="CanvasLayer/Save"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_etxde")
+text = "Load
+"
+
 [node name="Levels" type="VBoxContainer" parent="CanvasLayer" groups=["UI"]]
 layout_direction = 2
 offset_right = 243.0
@@ -94,4 +120,6 @@ text = "Levels"
 [connection signal="pressed" from="CanvasLayer/Game/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Language/English" to="." method="_on_en_pressed"]
 [connection signal="pressed" from="CanvasLayer/Language/Farsi" to="." method="_on_fa_pressed"]
+[connection signal="pressed" from="CanvasLayer/Save/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/Save/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="CanvasLayer/Levels/Levels" to="." method="_on_levels_pressed"]
