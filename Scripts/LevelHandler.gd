@@ -11,10 +11,7 @@ var path = "res://Scenes/Levels/"
 @onready var current_level : Level :
 	get:
 		var temp = get_tree().current_scene.scene_file_path
-		for category in Levels.keys():
-			var ids = Levels[category]
-			for id in ids:
-				var level : Level = Levels[category][id]
+		for category in Levels.values(): for level : Level in category:
 				if level.Path == temp:
 					current_level = level
 					return current_level
@@ -55,6 +52,7 @@ func load_dir(dir : DirAccess):
 		while file_name != "":
 			var folder_name = dir.get_current_dir().split("/")
 			folder_name = folder_name[folder_name.size()-1]
+			
 			if file_name.ends_with(".remap"):
 				file_name = file_name.trim_suffix(".remap")
 			
