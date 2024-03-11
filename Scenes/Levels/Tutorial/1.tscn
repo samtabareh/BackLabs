@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bj372tkjhrlgd"]
+[gd_scene load_steps=14 format=3 uid="uid://bj372tkjhrlgd"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Tutorial/1.gd" id="1_0cd58"]
 [ext_resource type="PackedScene" uid="uid://bbtpb3qirf85r" path="res://Objects/HUD/HUD.tscn" id="1_ot756"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://cxy6gm2brq88q" path="res://Resources/Molecules/H2O.tres" id="6_sict3"]
 [ext_resource type="PackedScene" uid="uid://btn0f6543n84d" path="res://Scenes/Levels/Main/1.tscn" id="7_12br0"]
 [ext_resource type="PackedScene" uid="uid://qeti6qadlgpj" path="res://Objects/Station/Infuser/Infuser.tscn" id="7_uvg76"]
+[ext_resource type="PackedScene" uid="uid://cxtfymvcer1y5" path="res://Objects/Slot/Slot.tscn" id="9_1f3is"]
 [ext_resource type="Resource" uid="uid://7ss6owkisa8w" path="res://Resources/Molecules/H2.tres" id="11_qwbax"]
 [ext_resource type="Resource" uid="uid://g21ojse7kxs3" path="res://Resources/Atoms/O.tres" id="13_pkhud"]
 
@@ -34,6 +35,10 @@ Result_Scene = ExtResource("7_12br0")
 [node name="Infuser" parent="." instance=ExtResource("7_uvg76")]
 visible = false
 position = Vector2(256, 232)
+
+[node name="Slot" parent="." instance=ExtResource("9_1f3is")]
+visible = false
+position = Vector2(640, 288)
 
 [node name="O" parent="." instance=ExtResource("5_slrhe")]
 visible = false

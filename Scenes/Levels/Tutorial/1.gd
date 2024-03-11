@@ -5,10 +5,10 @@ extends Node2D
 func _ready():
 	await Display.text(["Tutorial_1-1", "Tutorial_1-2", "Tutorial_1-3", "Tutorial_1-4"])
 	
-	$Atom.visible = true
+	$O.visible = true
 	await Display.text(["Tutorial_1-5"])
 	
-	$Molecule.visible = true
+	$H2.visible = true
 	await Display.text(["Tutorial_1-6","Tutorial_1-7","Tutorial_1-8"])
 	
 	$Slot.visible = true
