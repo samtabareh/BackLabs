@@ -5,13 +5,12 @@ var Levels := {}
 ## Contains the path for levels not the levels
 var UnlockedLevels : Array[Level] = []
 
-var Id = "LevelHandler"
 var path = "res://Scenes/Levels/"
 
 @onready var current_level : Level :
 	get:
 		var temp = get_tree().current_scene.scene_file_path
-		for category in Levels.values(): for level : Level in category:
+		for category in Levels.values(): for level : Level in category.values():
 				if level.Path == temp:
 					current_level = level
 					return current_level
@@ -57,7 +56,7 @@ func load_dir(dir : DirAccess):
 				file_name = file_name.trim_suffix(".remap")
 			
 			if not dir.current_is_dir():
-				print_as(Id, "Found file: "+file_name)
+				print_as("Found file: "+file_name)
 				
 				var num = file_name.get_slice("_",1)
 				num = num.get_slice(".",0)
@@ -65,14 +64,14 @@ func load_dir(dir : DirAccess):
 				var file_path = path+folder_name+'/'+file_name
 				
 				if file_name.split(".", 1)[1] == "tscn":
-					print_as(Id, "Adding file: "+ file_path+ " to "+ folder_name)
+					print_as("Adding file: "+ file_path+ " to "+ folder_name)
 					
 					if Levels.get(folder_name) == null:
 						Levels[folder_name] = {}
 					var level = Level.new().Level(int(num),file_name,folder_name,file_path)
 					Levels[folder_name][level.Id] = level
 			else:
-				print_as(Id, "Found directory: "+ file_name)
+				print_as("Found directory: "+ file_name)
 				Levels[folder_name] = {}
 				
 				var new_dir = DirAccess.open(dir.get_current_dir()+"/"+file_name)
@@ -80,6 +79,6 @@ func load_dir(dir : DirAccess):
 			
 			file_name = dir.get_next()
 	else:
-		print_as(Id, "An error occurred when trying to access the path. Error: "+
+		print_as("An error occurred when trying to access the path. Error: "+
 		str(DirAccess.get_open_error()))
 	Levels.erase("Levels")

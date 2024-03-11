@@ -1,10 +1,17 @@
 extends Main
 
-var Id = "SaveHandler"
-var SavePath = "user://save.BackLabs"
+var SaveDir = "user://"
+var SaveName = "save.BackLabs"
+var SavePath = SaveDir + SaveName
 
 func _ready():
 	SaveHandler.load_game()
+
+func _input(event):
+	if Input.is_action_just_released("dev-del") && Main.is_dev:
+		DirAccess.remove_absolute(SavePath)
+		LevelHandler.UnlockedLevels = []
+		print_as("Deleted save")
 
 func save_game():
 	var save_dict = {
@@ -16,11 +23,11 @@ func save_game():
 	var save = FileAccess.open(SavePath, FileAccess.WRITE)
 	var json_string = JSON.stringify(save_dict)
 	save.store_var(json_string)
-	print_as(Id, "Saved game file to: "+OS.get_user_data_dir()+"/save.BackLabs")
+	print_as("Saved game file to: "+OS.get_user_data_dir()+"/save.BackLabs")
 
 func load_game():
 	if not FileAccess.file_exists(SavePath):
-		print_as(Id, "Save file doesnt exist!")
+		print_as("Save file doesnt exist!")
 		return
 	
 	var save = FileAccess.open(SavePath, FileAccess.READ)
@@ -31,7 +38,7 @@ func load_game():
 		
 		var parse_result = json.parse(json_string)
 		if not parse_result == OK:
-			print_as(Id, "JSON Parse Error: "+ json.get_error_message()+ " in "+ json_string+ " at line "+ json.get_error_line())
+			print_as("JSON Parse Error: "+ json.get_error_message()+ " in "+ json_string+ " at line "+ json.get_error_line())
 			continue
 		
 		var data = json.get_data()
@@ -45,4 +52,4 @@ func load_game():
 					# Add the level to the array
 					LevelHandler.UnlockedLevels.append(level)
 	
-	print_as(Id, "Loaded save successfuly!")
+	print_as("Loaded save successfuly!")

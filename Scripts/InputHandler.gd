@@ -3,7 +3,6 @@ extends Main
 signal clicked
 
 var picked_up_item : Item
-var id = "InputHandler"
 
 func _input(event):
 	if Input.is_action_just_released("click"): clicked.emit()

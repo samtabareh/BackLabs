@@ -19,9 +19,8 @@ func _input(event):
 		Layer.visible = !Layer.visible
 		$CanvasLayer/Menu.visible = !Layer.visible
 	
-	if Input.is_action_just_released("dev-show") && Main.is_dev:
+	if Input.is_action_just_released("dev-toggle") && Main.is_dev:
 		$Layer/Level.visible = !$Layer/Level.visible
-	
 
 func _on_continue_pressed():
 	Layer.visible = false
