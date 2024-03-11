@@ -19,6 +19,12 @@ func load_dir(dir : DirAccess):
 			var folder_name = dir.get_current_dir().split("/")
 			folder_name = folder_name[folder_name.size()-1]
 			
+			# Prevents a bug where when the game is exported from godot all resources
+			# have a .remap added at the end of the file name, so we will remove it from our
+			# string to prevent issues.
+			if file_name.ends_with(".remap"):
+				file_name = file_name.trim_suffix(".remap")
+			
 			if not dir.current_is_dir():
 				Main.print_as(id, "Found file: "+ file_name)
 			
