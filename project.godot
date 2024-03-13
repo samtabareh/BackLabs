@@ -49,6 +49,10 @@ window/stretch/aspect="expand"
 movie_writer/movie_file="D:/Others/Godot Projects/Prototype/Run.avi"
 movie_writer/fps=30
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/project-time-tracker/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
@@ -63,6 +67,13 @@ folder_colors={
 [filesystem]
 
 import/blender/enabled=false
+
+[importer_defaults]
+
+csv_translation={
+"compress": true,
+"delimiter": 1
+}
 
 [input]
 
@@ -110,7 +121,7 @@ dev-toggle={
 [internationalization]
 
 locale/translation_remaps={}
-locale/translations=PackedStringArray("res://Localization - Sheet1.en.translation", "res://Localization - Sheet1.fa.translation")
+locale/translations=PackedStringArray("res://Localization.en.translation", "res://Localization.fa.translation")
 
 [rendering]
 

@@ -25,7 +25,7 @@ func load_dir(dir : DirAccess):
 				file_name = file_name.trim_suffix(".remap")
 			
 			if not dir.current_is_dir():
-				Main.print_as("Found file: "+ file_name)
+				Main.print_as("Found [color=cyan]file[/color]: "+ file_name)
 			
 				if file_name.ends_with(".tres"):
 					var file_path = path+folder_name+"/"+file_name
@@ -33,13 +33,13 @@ func load_dir(dir : DirAccess):
 					
 					if res is AtomT:
 						Atoms[res.Name] = res
-						print_as("Adding file: "+ file_path+ " to Atoms")
+						print_as("Adding [color=cyan]file[/color]: "+ file_path+ " to [color=green]Atoms[/color]")
 						
 					if res is MoleculeT:
 						Molecules[res.Name] = res
-						print_as("Adding file: "+ file_path+ " to Molecules")
+						print_as("Adding [color=cyan]file[/color]: "+ file_path+ " to [color=blue]Molecules[/color]")
 			else:
-				print_as("Found directory: " + file_name)
+				print_as("Found [color=magenta]directory[/color]: " + file_name)
 				var new_dir = DirAccess.open(dir.get_current_dir()+"/"+file_name)
 				load_dir(new_dir)
 			

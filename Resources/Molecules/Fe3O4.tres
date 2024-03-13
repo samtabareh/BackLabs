@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MoleculeT" load_steps=4 format=3 uid="uid://c0o1hn0oxm7hg"]
+
+[ext_resource type="Resource" uid="uid://g21ojse7kxs3" path="res://Resources/Atoms/O.tres" id="1_7a8ls"]
+[ext_resource type="Resource" uid="uid://dbyema365jvqo" path="res://Resources/Atoms/Fe.tres" id="1_xeae4"]
+[ext_resource type="Script" path="res://Resources/Types/MoleculeT.gd" id="2_4m1d7"]
+
+[resource]
+script = ExtResource("2_4m1d7")
+Name = "Fe3O4"
+Atoms = Array[Resource("res://Resources/Types/AtomT.gd")]([ExtResource("1_xeae4"), ExtResource("1_xeae4"), ExtResource("1_xeae4"), ExtResource("1_7a8ls"), ExtResource("1_7a8ls"), ExtResource("1_7a8ls"), ExtResource("1_7a8ls")])

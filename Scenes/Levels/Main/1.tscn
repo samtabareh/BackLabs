@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://btn0f6543n84d"]
+[gd_scene load_steps=12 format=3 uid="uid://btn0f6543n84d"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Main/1.gd" id="1_7cjts"]
 [ext_resource type="PackedScene" uid="uid://bbtpb3qirf85r" path="res://Objects/HUD/HUD.tscn" id="2_n4m6a"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cwtfe3dr3ec5b" path="res://Objects/Map/Map.tscn" id="4_2euth"]
 [ext_resource type="PackedScene" uid="uid://b0vnefe61ib4j" path="res://Objects/GoalScreen/GoalScreen.tscn" id="5_ur3h5"]
 [ext_resource type="Resource" uid="uid://cg678h3ynecdy" path="res://Resources/Molecules/CO2.tres" id="6_bn5s0"]
-[ext_resource type="PackedScene" uid="uid://br6iqwew8iwpl" path="res://Scenes/Levels/Tutorial/2.tscn" id="7_2q8qw"]
 [ext_resource type="PackedScene" uid="uid://qeti6qadlgpj" path="res://Objects/Station/Infuser/Infuser.tscn" id="8_ap12r"]
 [ext_resource type="PackedScene" uid="uid://0utnmhclas31" path="res://Objects/Item/Molecule/Molecule.tscn" id="9_h28tr"]
 [ext_resource type="PackedScene" uid="uid://cwuflur1avovq" path="res://Objects/Item/Atom/Atom.tscn" id="10_vv8fc"]
@@ -28,7 +27,6 @@ anchor_mode = 0
 [node name="GoalScreen" parent="." instance=ExtResource("5_ur3h5")]
 position = Vector2(640, 158)
 molecule = ExtResource("6_bn5s0")
-Result_Scene = ExtResource("7_2q8qw")
 
 [node name="Infuser" parent="." instance=ExtResource("8_ap12r")]
 position = Vector2(256, 232)

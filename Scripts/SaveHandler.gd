@@ -17,15 +17,18 @@ func save_game():
 	var save_dict = {
 		"Unlocked_Levels": []
 	}
+	
 	for level in LevelHandler.UnlockedLevels:
 		save_dict["Unlocked_Levels"].append(level.Path)
 	
 	var save = FileAccess.open(SavePath, FileAccess.WRITE)
 	var json_string = JSON.stringify(save_dict)
+	
 	save.store_var(json_string)
 	print_as("Saved game file to: "+OS.get_user_data_dir()+"/save.BackLabs")
 
 func load_game():
+	print_as("Loading save...")
 	if not FileAccess.file_exists(SavePath):
 		print_as("Save file doesnt exist!")
 		return
@@ -38,7 +41,8 @@ func load_game():
 		
 		var parse_result = json.parse(json_string)
 		if not parse_result == OK:
-			print_as("JSON Parse Error: "+ json.get_error_message()+ " in "+ json_string+ " at line "+ json.get_error_line())
+			print_as("[color=red]JSON Parse Error: "+ json.get_error_message()+
+			" in "+ json_string+ " at line "+ json.get_error_line()+ "[/color]")
 			continue
 		
 		var data = json.get_data()

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MoleculeT" load_steps=3 format=3 uid="uid://bitr408pr1pq4"]
+
+[ext_resource type="Resource" uid="uid://g21ojse7kxs3" path="res://Resources/Atoms/O.tres" id="1_ufwgs"]
+[ext_resource type="Script" path="res://Resources/Types/MoleculeT.gd" id="2_pfrwl"]
+
+[resource]
+script = ExtResource("2_pfrwl")
+Name = "O2"
+Atoms = Array[Resource("res://Resources/Types/AtomT.gd")]([ExtResource("1_ufwgs"), ExtResource("1_ufwgs")])

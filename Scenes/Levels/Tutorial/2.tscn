@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://cg678h3ynecdy" path="res://Resources/Molecules/CO2.tres" id="6_6mg02"]
 [ext_resource type="Resource" uid="uid://ce51t4cd6gpi5" path="res://Resources/Molecules/H2O2.tres" id="6_a1e8k"]
 [ext_resource type="PackedScene" uid="uid://e0fq4saymcm1" path="res://Objects/Station/Divider/Divider.tscn" id="7_2b0b3"]
-[ext_resource type="PackedScene" uid="uid://by36u0qvfcfig" path="res://Scenes/Levels/Main/2.tscn" id="7_husbt"]
+[ext_resource type="PackedScene" uid="uid://by36u0qvfcfig" path="res://Scenes/Levels/Main/3.tscn" id="7_husbt"]
 [ext_resource type="PackedScene" uid="uid://qeti6qadlgpj" path="res://Objects/Station/Infuser/Infuser.tscn" id="8_klxp7"]
 [ext_resource type="Resource" uid="uid://7ss6owkisa8w" path="res://Resources/Molecules/H2.tres" id="11_njldx"]
 [ext_resource type="PackedScene" uid="uid://0utnmhclas31" path="res://Objects/Item/Molecule/Molecule.tscn" id="11_q72k3"]

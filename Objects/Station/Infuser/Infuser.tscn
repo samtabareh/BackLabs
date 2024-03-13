@@ -231,6 +231,7 @@ position = Vector2(-19, 11)
 position = Vector2(-35, -21)
 
 [node name="ResultSlot" parent="." instance=ExtResource("3_r7vo2")]
+visible = false
 position = Vector2(0, -16)
 is_result_slot = true
 
